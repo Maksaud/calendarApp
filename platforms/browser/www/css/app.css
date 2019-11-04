@@ -1,0 +1,139 @@
+/* Your app styles here */
+.ios .tabbar-labels .tab-link:not(.tab-link-active) .icon-ios-fill {
+  display: none;
+}
+.ios .tabbar-labels .tab-link.tab-link-active .icon:not(.icon-ios-fill) {
+  display: none;
+}
+
+.md .navbar-inner, body, #app, .view{
+  background-color:rgba(255, 255, 255, 0);
+}
+
+.page, .popup{
+  background-image:url('../img/HomeBackground.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  overflow-x:hidden;
+}
+
+/*navbar*/
+.navbar, .navbar-inner{
+ background-color:transparent;
+ --f7-navbar-shadow-image: none;
+}
+
+.navbar a{
+  margin:0!important;
+}
+
+/*==========View Main=============*/
+
+/*Clock*/
+.home .clockdate-wrapper {
+  padding:25px 0;
+  max-width:350px;
+  width:100%;
+  text-align:center;
+  border-radius:5px;
+  margin:25% auto;
+}
+.home #clock{
+  font-family: sans-serif;
+  font-size:60px;
+  text-shadow:0px 0px 1px #fff;
+  color:#fff;
+}
+.home #clock span {
+  color:white;
+  text-shadow:0px 0px 1px #333;
+  font-size:30px;
+  position:relative;
+}
+.home #date {
+  letter-spacing:10px;
+  font-size:14px;
+  font-family:arial,sans-serif;
+  color:#fff;
+}
+
+.home #greet{
+  font-size:20px;
+  padding:30px;
+  color:white;
+}
+
+.home .button{
+  --f7-button-text-color:white;
+  --f7-button-fill-bg-color:#005365;
+  margin:100px;
+  --f7-button-pressed-bg-color:white;
+  --f7-button-pressed-text-color: #005365;
+}
+
+/*calender*/
+
+.title{
+  padding:0;
+  color:white;
+  margin:0;
+}
+
+.calTitle{
+  text-align:center;
+}
+
+.calender .page-content{
+  padding:0!important;
+}
+
+.Months{
+  margin:20px 0;
+}
+
+.Months .button{
+  background-color: #F1D0CF;
+  color:black;
+  --f7-button-height:auto;
+  padding:17% 0;
+  --f7-button-border-radius: 0;
+}
+
+#callender .block, #MONTH .block{
+  margin:0;
+}
+
+/*===Left Panel===*/
+
+.panel{
+  background-color: #005365;
+}
+
+/*===Months===*/
+
+.table{
+  background-color:#005365;
+  width:100%;
+  padding:10px;
+}
+
+.table .button{
+  background-color:white;
+  text-align:center;
+  padding:0;
+  margin:0;
+  border-radius: 0;
+  height: 50px;
+  margin-top:10px;
+  border:none;
+}
+
+.empty{
+  padding:0;
+  margin-right:6px;
+  background-color:transparent;
+}
+
+.times{
+  background-color:white;
+}

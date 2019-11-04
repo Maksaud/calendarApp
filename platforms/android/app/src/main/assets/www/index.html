@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+          * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>My App</title>
+
+  <link rel="stylesheet" href="framework7/css/framework7.bundle.min.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!--WHOLE APP-->
+<div id="app">
+
+      <!--Top Navbar--> 
+      <div class="navbar">
+          <div class="navbar-inner">
+            <a class="button panel-open left" data-panel="left"><i class="f7-icons">gear</i></a>
+          </div>
+        </div>
+  
+
+  <!-- Left panel with cover effect -->
+  <div class="panel panel-left panel-cover theme-dark">
+    <div class="view">
+      <div class="page">
+
+        <!--Panel Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="title">Settings</div>
+          </div>
+        </div>
+
+        <!--Panel content-->
+        <div class="page-content">
+          <div class="block">
+            <ul class="list">
+              <li id="nightMode" class="button">Night mode</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+    <!--Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+  <div id="view-home" class="view view-main">
+
+      <!--Page, data-name contains page name which can be used in page callbacks-->
+    <div class="page home" data-name="home">
+
+      <!--Scrollable page content-->
+      <div class="page-content">
+          <div id="clockdate">
+              <div class="clockdate-wrapper">
+                  <div id="clock"></div>
+                  <div id="date"></div>
+                  <div id="greet"></div>
+              </div>
+          </div>
+          <a id="about" class="button button-fill center item-content item-link">Lets Get Started</a>
+      </div>
+
+    </div>
+
+    <div class="page calendarPage" data-name="about">
+        <div class="page-content">
+            <div class="block">
+                <div class="card">
+                  <div class="row">
+                    <div class="button" id="previous"><i class="f7-icons">arrow_left</i></div><h2 id="monthAndYear"></h2><div class="button" id="next"><i class="f7-icons">arrow_right</i></div>
+                  </div>
+                    <table class="table table-bordered" id="calendar">
+                        <thead>
+                          <tr>
+                              <th>Sun</th>
+                              <th>Mon</th>
+                              <th>Tue</th>
+                              <th>Wed</th>
+                              <th>Thu</th>
+                              <th>Fri</th>
+                              <th>Sat</th>
+                          </tr>
+                        </thead>
+            
+                        <tbody id="calendar-body">
+            
+                        </tbody>
+                    </table>
+
+                    <br/>
+                    <form class="row">
+                        <label for="month"><h2>Jump To: </h2></label>
+                        <select class="button jump" name="month" id="month">
+                            <option value=0>Jan</option>
+                            <option value=1>Feb</option>
+                            <option value=2>Mar</option>
+                            <option value=3>Apr</option>
+                            <option value=4>May</option>
+                            <option value=5>Jun</option>
+                            <option value=6>Jul</option>
+                            <option value=7>Aug</option>
+                            <option value=8>Sep</option>
+                            <option value=9>Oct</option>
+                            <option value=10>Nov</option>
+                            <option value=11>Dec</option>
+                        </select>
+            
+            
+                        <label for="year"></label><select class="button jump" name="year" id="year">
+                        <option value=1990>1990</option>
+                        <option value=1991>1991</option>
+                        <option value=1992>1992</option>
+                        <option value=1993>1993</option>
+                        <option value=1994>1994</option>
+                        <option value=1995>1995</option>
+                        <option value=1996>1996</option>
+                        <option value=1997>1997</option>
+                        <option value=1998>1998</option>
+                        <option value=1999>1999</option>
+                        <option value=2000>2000</option>
+                        <option value=2001>2001</option>
+                        <option value=2002>2002</option>
+                        <option value=2003>2003</option>
+                        <option value=2004>2004</option>
+                        <option value=2005>2005</option>
+                        <option value=2006>2006</option>
+                        <option value=2007>2007</option>
+                        <option value=2008>2008</option>
+                        <option value=2009>2009</option>
+                        <option value=2010>2010</option>
+                        <option value=2011>2011</option>
+                        <option value=2012>2012</option>
+                        <option value=2013>2013</option>
+                        <option value=2014>2014</option>
+                        <option value=2015>2015</option>
+                        <option value=2016>2016</option>
+                        <option value=2017>2017</option>
+                        <option value=2018>2018</option>
+                        <option value=2019>2019</option>
+                        <option value=2020>2020</option>
+                        <option value=2021>2021</option>
+                        <option value=2022>2022</option>
+                        <option value=2023>2023</option>
+                        <option value=2024>2024</option>
+                        <option value=2025>2025</option>
+                        <option value=2026>2026</option>
+                        <option value=2027>2027</option>
+                        <option value=2028>2028</option>
+                        <option value=2029>2029</option>
+                        <option value=2030>2030</option>
+                    </select>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" data-name="months">
+      <div class="navbar">
+        <div class="navbar-inner">
+            <a id="back_button" href="#"><i class="f7-icons">arrow_left</i></a>
+        </div>
+      </div>
+      <div class="page-content">
+        <!--Months-->
+        <div id="month" class="block" >
+              <h1 id="calMonth" class="title calTitle"></h1>
+            <div class="block table">
+              <div class="row">
+                  <a href="/sched/" class="button col-15">1</a>
+                  <div class="button col-15">2</div>
+                  <div class="button col-15">3</div>
+                  <div class="button col-15">4</div>
+                  <div class="button col-15">5</div>
+                  <div class="button col-15">6</div>
+                  <div class="button col-15">7</div>
+              </div>
+              <div class="row">
+                  <div class="button col-15">8</div>
+                  <div class="button col-15">9</div>
+                  <div class="button col-15">10</div>
+                  <div class="button col-15">11</div>
+                  <div class="button col-15">12</div>
+                  <div class="button col-15">13</div>
+                  <div class="button col-15">14</div>
+              </div>
+              <div class="row">
+                  <div class="button col-15">15</div>
+                  <div class="button col-15">16</div>
+                  <div class="button col-15">17</div>
+                  <div class="button col-15">18</div>
+                  <div class="button col-15">19</div>
+                  <div class="button col-15">20</div>
+                  <div class="button col-15">21</div>
+              </div>
+              <div class="row">
+                  <div class="button col-15">22</div>
+                  <div class="button col-15">23</div>
+                  <div class="button col-15">24</div>
+                  <div class="button col-15">25</div>
+                  <div class="button col-15">26</div>
+                  <div class="button col-15">27</div>
+                  <div class="button col-15">28</div>
+              </div>
+              <div class="row">
+                  <div id="29th" class="button col-15">29</div>
+                  <div id="30th" class="button col-15">30</div>
+                  <div id="31st" class="button col-15">31</div>
+                  <div id="empty" class="button col-55"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Cordova
+
+
+<script src="js/cordova.js"></script>
+-->
+
+<script src="js/jquery.js"></script>
+
+<!-- Framework7 library -->
+<script src="framework7/js/framework7.bundle.min.js"></script>
+
+<!-- App routes -->
+<script src="js/routes.js"></script>
+
+<!-- Your custom app scripts -->
+<script src="js/app.js"></script>
+
+<!--<script src="js/Calender.js"></script>-->
+</body>
+</html>
